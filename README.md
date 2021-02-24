@@ -1,2 +1,3 @@
 # cssandbox
-Learning python
+tips for working remote
+
