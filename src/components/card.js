@@ -16,55 +16,49 @@ const useStyles = makeStyles((theme) => ({
   details: {
     display: 'flex',
     flexDirection: 'column',
+    minWidth:210,
+
   },
   content: {
     flex: '1 0 auto',
   },
   cover: {
-    width: 151,
+    width: 100,
   },
-  controls: {
-    display: 'flex',
-    alignItems: 'center',
-    paddingLeft: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
+  subCat:{
+      display:'flex',
+      flexDirection:'column',
   },
-  playIcon: {
-    height: 38,
-    width: 38,
-  },
+  subCatText:{
+      paddingRight: "0.5rem",
+  }
+  
 }));
 
-export default function MediaControlCard() {
+export default function MediaControlCard(props) {
   const classes = useStyles();
-  const theme = useTheme();
-
+  const {type, today, total} = props.props
+    console.log(props.props);
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} elevation={0} variant="outlined">
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
-            Live From Space
+          <Typography component="h6" variant="h6">
+            {type}
           </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            Mac Miller
+          <div className={classes.subCat}>
+          <Typography variant="subtitle1" color="textSecondary" className={classes.subCatText}>
+            {"Today: "}{today}
           </Typography>
+          <Typography variant="subtitle1" color="textSecondary" className={classes.subCatText}>
+            {"Total: "}{total}
+          </Typography>
+          </div>
         </CardContent>
-        <div className={classes.controls}>
-          <IconButton aria-label="previous">
-            {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-          </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon className={classes.playIcon} />
-          </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-          </IconButton>
-        </div>
       </div>
       <CardMedia
         className={classes.cover}
-        image="src/static/images/live-from-space.jpg"
+        image="/static/images/live-from-space.jpg"
         title="Live from space album cover"
       />
     </Card>

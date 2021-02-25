@@ -28,7 +28,9 @@ const RWHLayout = () => {
                 </Grid>
                 <Hidden smUp>
                     <Grid item xs={12}>
-                        <Paper elevation={0} className={classes.paper} square>Mobile view content</Paper>
+                        <Paper elevation={0} className={classes.paper} square>
+                        <Content />
+                        </Paper>
                     </Grid>
                 </Hidden>
                 <Hidden smDown>

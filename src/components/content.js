@@ -14,15 +14,33 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 class Content extends Component {
-    
+    state = {
+        categorycards:[
+            {
+                type:"Remote Jobs",
+                today: 24,
+                total: 200
+            },
+            {
+                type:"Posts",
+                today: 3,
+                total: 64
+            },
+            {
+                type:"Tips & Trick(s)",
+                today: 3,
+                total: 3
+            },          
+        ]
+    }
 
     render() {
         const classes = this.props;
         return (
-            <Grid container className={classes.root} spacing={2}>
-                {[0, 1, 2].map((value) => (
-                    <Grid key={value} item>
-                        <MediaCard />
+            <Grid container className={classes.root} spacing={2} >
+                {this.state.categorycards.map((value, index) => (
+                    <Grid key={index} item >
+                        <MediaCard props={value} />
                     </Grid>
                 ))}
             </Grid>
