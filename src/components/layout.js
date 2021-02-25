@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 import RwhHeader from "./header";
+import Content from './content';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,7 +36,9 @@ const RWHLayout = () => {
                         <Paper elevation={0} className={classes.paper} square>Left Navigation</Paper>
                     </Grid>
                     <Grid item xs={9}>
-                        <Paper elevation={0} className={classes.paper} square>Right Content</Paper>
+                        <Paper elevation={0} className={classes.paper} square>
+                            <Content />
+                        </Paper>
                     </Grid>
                 </Hidden>
                 <Grid item xs={12}>
