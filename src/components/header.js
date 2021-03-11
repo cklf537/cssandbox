@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Avatar from '@material-ui/core/Avatar';
+import HamberguerMenu from "./HambergerMenu";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,21 +21,22 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 400,
         color: "#264653",
         textAlign: "center",
-        [theme.breakpoints.down('sm')]:{
+        [theme.breakpoints.down('sm')]: {
             fontSize: "1rem"
         }
     },
-    headerBg:{
+    headerBg: {
         backgroundColor: "#EED38E",
-        borderBottom: "solid 1px #DCA721"
+        borderBottom: "solid 1px #DCA721",
+        zIndex: "-9999999999"
     }
-    
 }));
 
 const RwhHeader = ({ props }) => {
     const classes = useStyles();
     return (
-        <AppBar position="static" className={classes.headerBg} elevation={0}> 
+        <div><
+            AppBar position="static" className={classes.headerBg} elevation={0}>
             <Toolbar>
                 <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                     <MenuIcon />
@@ -42,10 +44,11 @@ const RwhHeader = ({ props }) => {
                 <Typography variant="h6" className={classes.title}>
                     Remote Work House.
           </Typography>
-            <Avatar>H</Avatar>
+                <Avatar>H</Avatar>
             </Toolbar>
         </AppBar>
+            <HamberguerMenu />
+        </div>
     );
 }
-
 export default RwhHeader;

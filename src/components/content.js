@@ -7,10 +7,14 @@ import { withStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      backgroundColor: 'red'
     },
     control: {
       padding: theme.spacing(2),
     },
+    banner:{
+        backgroundColor: '#ddd'
+    }
   }));
 
 class Content extends Component {

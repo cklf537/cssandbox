@@ -6,6 +6,7 @@ import Hidden from '@material-ui/core/Hidden';
 import RwhHeader from "./header";
 import Content from './content';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
